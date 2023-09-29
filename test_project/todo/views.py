@@ -10,7 +10,7 @@ def get_todo_list(request):
     }
     return render(request, 'todo/todo_list.html', context)
 
-    # add item to db.
+# Add item to db.
 def add_item(request):
     if request.method == 'POST':
         form = ItemForm(request.POST)
