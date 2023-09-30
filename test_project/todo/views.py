@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
 from .forms import ItemForm
 
+
 # Get to do list from db.
 def get_todo_list(request):
     items = Item.objects.all()
@@ -9,6 +10,7 @@ def get_todo_list(request):
         'items': items
     }
     return render(request, 'todo/todo_list.html', context)
+
 
 # Add item to db.
 def add_item(request):
@@ -23,6 +25,7 @@ def add_item(request):
     }
     return render(request, 'todo/add_item.html', context)
 
+
 # Update Item in DB
 def edit_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
@@ -36,3 +39,17 @@ def edit_item(request, item_id):
         'form': form
     }
     return render(request, 'todo/edit_item.html', context)
+
+# Toggle Item Done in DB
+def toggle_item(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.done = not item.done
+    item.save()
+    return redirect('get_todo_list')
+
+    
+# Delete Item in DB
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.delete()
+    return redirect('get_todo_list')
