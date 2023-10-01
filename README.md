@@ -13,3 +13,6 @@
 1. Copy the url from the webpage
 2. and navigate to settings.py and paste the url in ALLOWED_HOSTS
 3. This is an example~ ALLOWED_HOSTS = ['8000-donnavanstadd-fsfdjango-oo8k2bku93p.ws-eu104.gitpod.io'] 
+
+### Tested website
+* Tested website with the built in test.py via test case
