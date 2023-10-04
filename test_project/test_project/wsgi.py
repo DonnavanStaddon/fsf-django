@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 """
 
 import os
+sys.path.append('/home/test_project/todo')
+sys.path.append('/home/test_project/test_project/todo')
 
 from django.core.wsgi import get_wsgi_application
 
