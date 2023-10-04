@@ -1,1 +1,2 @@
-web: gunicorn test_project.test_project.wsgi:application
+web: gunicorn test_project.wsgi:application
+'test_project.wsgi.application'
