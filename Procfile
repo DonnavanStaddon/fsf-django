@@ -1,1 +1,1 @@
-web: gunicorn test_project.manage:application
+web: gunicorn test_project.wsgi:application
